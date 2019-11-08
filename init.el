@@ -56,3 +56,6 @@
 (require 'init-ui)
 (require 'init-projectile)
 (require 'init-dashboard)
+
+;; Programming Tools
+(require 'init-git)
