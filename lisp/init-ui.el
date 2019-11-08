@@ -116,6 +116,23 @@
 (use-package hide-mode-line
   :hook (((completion-list-mode completion-in-region-mode) . hide-mode-line-mode)))
 
+(use-package minions
+  :disabled t
+  :demand t
+  :init (minions-mode)
+  :config
+  (setq
+   minions-mode-line-lighter "#"
+   minions-direct '(flycheck-mode)))
+
+(use-package moody
+  :disabled t
+  :demand t
+  :config
+  (setq x-underline-at-descent-line t)
+  (moody-replace-mode-line-buffer-identification)
+  (moody-replace-vc-mode))
+
 ;; Install the collection of themes from Doom-Emacs
 (use-package doom-themes
   :demand t
