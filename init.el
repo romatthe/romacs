@@ -51,4 +51,5 @@
 ;; Essential bootstrapping procedures
 (require 'init-bootstrap)
 
+(require 'init-basic)
 (require 'init-ui)
