@@ -54,10 +54,13 @@
 ;; Core
 (require 'init-basic)
 (require 'init-editing)
-(require 'init-ui)
 (require 'init-ivy)
-(require 'init-projectile)
-(require 'init-dashboard)
+(require 'init-dired)
 
 ;; Programming Tools
 (require 'init-git)
+(require 'init-projectile)
+
+;; UI
+(require 'init-ui)
+(require 'init-dashboard)
