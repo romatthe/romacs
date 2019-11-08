@@ -54,6 +54,7 @@
 ;; Core
 (require 'init-basic)
 (require 'init-ui)
+(require 'init-ivy)
 (require 'init-projectile)
 (require 'init-dashboard)
 
