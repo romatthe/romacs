@@ -56,6 +56,7 @@
 (require 'init-editing)
 (require 'init-ivy)
 (require 'init-dired)
+(require 'init-highlight)
 
 ;; Programming Tools
 (require 'init-git)
