@@ -1,4 +1,4 @@
-;;; -*- lexical-binding: t no-byte-compile: t; -*-
+;;; -*- lexical-binding: t -*-
 
 ;; Copyright (C) 2018-2019 Robin Mattheussen
 
@@ -25,34 +25,27 @@
 
 ;;; Commentary:
 ;;
-;; Robin Mattheussen's Emacs configuration
+;; Dashboard configuration
 ;;
 
 ;;; Code:
 
-;; Load path
-;; Optimize: Force "lisp"" and "site-lisp" at the head to reduce the startup time.
-(defun update-load-path (&rest _)
-  "Update `load-path'."
-  (push (expand-file-name "site-lisp" user-emacs-directory) load-path)
-  (push (expand-file-name "lisp" user-emacs-directory) load-path))
+(use-package dashboard
+  :demand t
+  :custom
+  (dashboard-startup-banner "~/.emacs.d/img/romacs.png")
+  (dashboard-center-content t)
+  (dashboard-show-shortcuts t)
+  (dashboard-set-heading-icons t)
+  (dashboard-set-file-icons t)
+  (dashboard-set-navigator t)
+  (dashboard-items '((recents  . 10)
+                     (projects . 10)))
+  :config
+  (dashboard-setup-startup-hook))
 
-(defun add-subdirs-to-load-path (&rest _)
-  "Add subdirectories to `load-path'."
-  (let ((default-directory
-          (expand-file-name "site-lisp" user-emacs-directory)))
-    (normal-top-level-add-subdirs-to-load-path)))
 
-(advice-add #'package-initialize :after #'update-load-path)
-(advice-add #'package-initialize :after #'add-subdirs-to-load-path)
+(provide 'init-dashboard)
 
-(update-load-path)
-
-;; Essential bootstrapping procedures
-(require 'init-bootstrap)
-
-;; Core
-(require 'init-basic)
-(require 'init-ui)
-(require 'init-projectile)
-(require 'init-dashboard)
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; init-dashboard.el ends here
