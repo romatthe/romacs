@@ -14,8 +14,9 @@ history
 places
 recentf
 
-# packages
+# directories
 straight/
+transient/
 
 # emacs tempfiles that shouldn't be there
 .mc-lists.el
