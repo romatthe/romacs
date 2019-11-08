@@ -53,6 +53,7 @@
 
 ;; Core
 (require 'init-basic)
+(require 'init-editing)
 (require 'init-ui)
 (require 'init-ivy)
 (require 'init-projectile)
