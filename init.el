@@ -58,6 +58,8 @@
 (require 'init-dired)
 (require 'init-highlight)
 (require 'init-ibuffer)
+(require 'init-org)
+(require 'init-treemacs)
 
 ;; Programming Tools
 (require 'init-git)
