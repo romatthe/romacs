@@ -62,6 +62,7 @@
 (require 'init-treemacs)
 
 ;; Programming Tools
+(require 'init-company)
 (require 'init-git)
 (require 'init-projectile)
 
