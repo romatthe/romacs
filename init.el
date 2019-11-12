@@ -65,8 +65,9 @@
 ;; Programming Tools
 (require 'init-company)
 (require 'init-git)
+(require 'init-flycheck)
 (require 'init-projectile)
 
 ;; UI
-(require 'init-ui)
 (require 'init-dashboard)
+(require 'init-ui)
