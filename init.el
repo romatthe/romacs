@@ -48,6 +48,9 @@
 
 (update-load-path)
 
+;;; Requirements:
+;; The following system utilities should be installed: git, gcc, cmake, ccls
+
 ;; Essential bootstrapping procedures
 (require 'init-bootstrap)
 
@@ -70,7 +73,10 @@
 (require 'init-git)
 (require 'init-flycheck)
 (require 'init-projectile)
+(require 'init-lsp)
 
 ;; UI
 (require 'init-dashboard)
 (require 'init-ui)
+
+;; Languages
