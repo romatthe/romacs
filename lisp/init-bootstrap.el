@@ -51,6 +51,9 @@
 ;; Always defer loading a package unless :demand is specified
 (setq use-package-always-defer t)
 
+;; Ensure the presence of system packages
+(use-package use-package-ensure-system-package :demand t)
+
 ;; Now that we have `use-package`, we can use the Garbage Collection Magic Trick
 (use-package gcmh
   :straight t
