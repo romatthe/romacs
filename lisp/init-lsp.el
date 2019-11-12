@@ -64,17 +64,22 @@
   (lsp-ui-sideline-enable nil)
   (lsp-ui-sideline-ignore-duplicate t)
   (lsp-ui-sideline-show-code-actions nil)
-  :config
-  ;; Use lsp-ui-doc-webkit only in GUI
-  (if *sys/gui*
-      (setq lsp-ui-doc-use-webkit t)))
+  (lsp-ui-doc-use-webkit t))
 
 (use-package company-lsp
   :custom
-  (company-lsp-cache-candidates 'auto))
+  (company-lsp-cache-candidates 'auto)
+  (company-lsp-async t))
 
 (use-package dap-mode
-  :diminish
+  :after lsp-mode
+  :config
+  (dap-mode t)
+  (dap-ui-mode t))
+
+(use-package dap-mode
+  :after lsp-mode
+  :blackout t
   :bind (:map dap-mode-map
               (("<f12>" . dap-debug)
                ("<f8>" . dap-continue)
@@ -82,9 +87,29 @@
                ("<M-f11>" . dap-step-in)
                ("C-M-<f11>" . dap-step-out)
                ("<f7>" . dap-breakpoint-toggle)))
-  :hook ((after-init . dap-mode)
-         (dap-mode . dap-ui-mode)
-         ((c-mode c++-mode) . (lambda () (require 'dap-lldb)))))
+  :config
+  (dap-mode t)
+  (dap-ui-mode t)
+  ;; Call the dap-mode hydra every time a break point is hit
+  (add-hook 'dap-stopped-hook
+            (lambda (arg) (call-interactively #'dap-hydra))))
+
+(use-package ccls
+  :after projectile
+  :demand t
+  :ensure-system-package ccls
+  :custom
+  (ccls-sem-highlight-method 'font-lock)
+  (ccls-args nil)
+  (ccls-executable (executable-find "ccls"))
+  (projectile-project-root-files-top-down-recurring
+   (append '("compile_commands.json" ".ccls")
+           projectile-project-root-files-top-down-recurring))
+  :config (add-to-list 'projectile-globally-ignored-directories ".ccls-cache"))
+
+
+
+(provide 'init-lsp)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; init-lsp.el ends here
