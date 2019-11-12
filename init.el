@@ -60,6 +60,7 @@
 (require 'init-ibuffer)
 (require 'init-org)
 (require 'init-treemacs)
+(require 'init-window)
 
 ;; Programming Tools
 (require 'init-company)
