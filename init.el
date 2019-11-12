@@ -51,6 +51,9 @@
 ;; Essential bootstrapping procedures
 (require 'init-bootstrap)
 
+;; Cheats!
+(require 'init-cheatsheet)
+
 ;; Core
 (require 'init-basic)
 (require 'init-editing)
