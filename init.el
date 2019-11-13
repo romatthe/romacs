@@ -80,3 +80,6 @@
 (require 'init-ui)
 
 ;; Languages
+(require 'init-lang-c-cpp)
+(require 'init-lang-haskell)
+(require 'init-lang-markdown)
