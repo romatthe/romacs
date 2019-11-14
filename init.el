@@ -83,3 +83,4 @@
 (require 'init-lang-c-cpp)
 (require 'init-lang-haskell)
 (require 'init-lang-markdown)
+(require 'init-lang-nix)
