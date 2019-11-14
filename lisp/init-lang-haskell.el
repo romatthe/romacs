@@ -45,4 +45,4 @@
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;; init-lang-c-cpp.el ends here
+;;; init-lang-haskell.el ends here
