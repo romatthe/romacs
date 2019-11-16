@@ -51,8 +51,10 @@
 (use-package auctex)
 
 (use-package tex
+  :straight nil
   :mode ("\\.tex\\'" . latex-mode)
   :config
+  (setq-default TeX-engine 'xetex)
   (setq TeX-source-correlate-mode t)
   (setq TeX-source-correlate-method 'synctex)
   (setq TeX-auto-save t)
