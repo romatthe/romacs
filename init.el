@@ -81,6 +81,7 @@
 
 ;; Languages
 (require 'init-lang-c-cpp)
+(require 'init-lang-common-lisp)
 (require 'init-lang-clojure)
 (require 'init-lang-go)
 (require 'init-lang-haskell)
