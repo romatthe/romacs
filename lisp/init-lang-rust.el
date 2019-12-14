@@ -30,9 +30,13 @@
 
 ;;; Code:
 
-(use-package toml-mode)
+(use-package toml-mode
+  :mode ".toml$")
 
-(use-package rust-mode)
+(use-package rust-mode
+  :mode ".rs$"
+  :config
+  (setq rust-format-on-save t))
 
 ;; Add keybindings for interacting with Cargo
 (use-package cargo
