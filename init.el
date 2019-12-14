@@ -88,3 +88,4 @@
 (require 'init-lang-latex)
 (require 'init-lang-markdown)
 (require 'init-lang-nix)
+(require 'init-lang-rust)

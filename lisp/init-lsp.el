@@ -33,7 +33,7 @@
 (use-package lsp-mode
   :blackout t
   :bind (:map lsp-mode-map ("C-c C-f" . lsp-format-buffer))
-  :hook ((c-mode c++-mode java-mode) . lsp)
+  :hook ((c-mode c++-mode java-mode rust-mode) . lsp)
   :custom
   (lsp-auto-guess-root t)       ; Detect project root
   (lsp-prefer-flymake nil)      ; Use lsp-ui and flycheck
