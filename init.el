@@ -13,3 +13,5 @@
 ;; Bootstrap the configuration
 (load-file (expand-file-name "init-bootstrap.el" user-emacs-directory))
 
+;; Core modules
+(require 'init-defaults)
