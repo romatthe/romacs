@@ -15,3 +15,4 @@
 
 ;; Core modules
 (require 'init-defaults)
+(require 'init-editing)

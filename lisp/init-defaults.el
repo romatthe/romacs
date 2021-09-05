@@ -51,9 +51,10 @@
 (setq custom-file (make-temp-file ""))
 (setq custom-safe-themes t)
 
+;; Configure the recent files list
 (use-package recentf
   :config
-  ;; Don't clutter the recent file list with downloaded packages 
+  ;; Don't clutter the recent file list with downloaded packages
   (add-to-list 'recentf-exclude "\\elpa"))
 
 ;; Remove some annoying/useless keybindings
@@ -62,6 +63,10 @@
 (unbind-key "C-x C-z")        ;; suspend-frame
 (unbind-key "<mouse-2>")      ;; pasting with mouse-wheel click
 (unbind-key "<C-wheel-down>") ;; text scale adjust
+
+;; Better whitespace management
+(add-hook 'before-save-hook #'delete-trailing-whitespace)
+(setq require-final-newline t)
 
 
 (provide 'init-defaults)
