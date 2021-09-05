@@ -40,7 +40,7 @@
 ;; (This is to avoid its noisy presence in eg terminal modes, ivy, etc.)
 (use-package hl-line
   :hook ((prog-mode . hl-line-mode)
-	 (text-mode . hl-line-mode)))
+         (text-mode . hl-line-mode)))
 
 ;; Stop littering the file system with junk
 (setq make-backup-files nil

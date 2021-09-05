@@ -16,3 +16,4 @@
 ;; Core modules
 (require 'init-defaults)
 (require 'init-editing)
+(require 'init-visual)
