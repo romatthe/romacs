@@ -56,4 +56,12 @@
   ;; Don't clutter the recent file list with downloaded packages 
   (add-to-list 'recentf-exclude "\\elpa"))
 
+;; Remove some annoying/useless keybindings
+(unbind-key "C-x C-d")        ;; list-directory
+(unbind-key "C-z")            ;; suspend-frame
+(unbind-key "C-x C-z")        ;; suspend-frame
+(unbind-key "<mouse-2>")      ;; pasting with mouse-wheel click
+(unbind-key "<C-wheel-down>") ;; text scale adjust
+
+
 (provide 'init-defaults)
