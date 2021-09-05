@@ -17,6 +17,7 @@ recentf
 # directories
 straight/
 transient/
+eln-cache/
 
 # emacs tempfiles that shouldn't be there
 .mc-lists.el
