@@ -1,9 +1,9 @@
 ;;; -*- lexical-binding: t no-byte-compile: t; -*-
 
-;; Copyright (C) 2018-2019 Robin Mattheussen
+;; Copyright (C) 2018-2021 Robin Mattheussen
 
-;; Author: Robin Mattheussen <robin.mattheussen@gmail.com>
-;; URL: https://github.com/romatthe/dotfiles
+;; Author: Robin Mattheussen <me@romatthe.dev>
+;; URL: https://github.com/romatthe/romacs
 
 ;; This file is not part of GNU Emacs.
 ;;
@@ -30,62 +30,3 @@
 
 ;;; Code:
 
-;; Load path
-;; Optimize: Force "lisp"" and "site-lisp" at the head to reduce the startup time.
-(defun update-load-path (&rest _)
-  "Update `load-path'."
-  (push (expand-file-name "site-lisp" user-emacs-directory) load-path)
-  (push (expand-file-name "lisp" user-emacs-directory) load-path))
-
-(defun add-subdirs-to-load-path (&rest _)
-  "Add subdirectories to `load-path'."
-  (let ((default-directory
-          (expand-file-name "site-lisp" user-emacs-directory)))
-    (normal-top-level-add-subdirs-to-load-path)))
-
-(advice-add #'package-initialize :after #'update-load-path)
-(advice-add #'package-initialize :after #'add-subdirs-to-load-path)
-
-(update-load-path)
-
-;;; Requirements:
-;; The following system utilities should be installed: git, gcc, cmake, ccls
-
-;; Essential bootstrapping procedures
-(require 'init-bootstrap)
-
-;; Cheats!
-(require 'init-cheatsheet)
-
-;; Core
-(require 'init-basic)
-(require 'init-editing)
-(require 'init-ivy)
-(require 'init-dired)
-(require 'init-highlight)
-(require 'init-ibuffer)
-(require 'init-org)
-(require 'init-treemacs)
-(require 'init-window)
-
-;; Programming Tools
-(require 'init-company)
-(require 'init-git)
-(require 'init-flycheck)
-(require 'init-projectile)
-(require 'init-lsp)
-
-;; UI
-(require 'init-dashboard)
-(require 'init-ui)
-
-;; Languages
-(require 'init-lang-c-cpp)
-(require 'init-lang-common-lisp)
-(require 'init-lang-clojure)
-(require 'init-lang-go)
-(require 'init-lang-haskell)
-(require 'init-lang-latex)
-(require 'init-lang-markdown)
-(require 'init-lang-nix)
-(require 'init-lang-rust)
