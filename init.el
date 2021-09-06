@@ -16,4 +16,8 @@
 ;; Core modules
 (require 'init-defaults)
 (require 'init-editing)
+(require 'init-tree-sitter)
 (require 'init-visual)
+
+;; Languages
+(require 'init-lang-rust)
