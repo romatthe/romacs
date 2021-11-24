@@ -20,4 +20,5 @@
 (require 'init-visual)
 
 ;; Languages
+(require 'init-lang-nix)
 (require 'init-lang-rust)
