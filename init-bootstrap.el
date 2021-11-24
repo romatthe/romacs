@@ -42,20 +42,20 @@
       (eval-print-last-sexp)))
   (load bootstrap-file nil 'nomessage))
 
-;; Effectively replace use-package with straight-use-package
-;; https://github.com/raxod502/straight.el/blob/master/README.md#integration-with-use-package
-(straight-use-package 'use-package)
-(setq straight-use-package-by-default t)
-;; Always defer loading a package unless :demand is specified
-(setq use-package-always-defer t)
+;; Bootstrap leaf.el for package configuration
+(straight-use-package 'leaf)
+(straight-use-package 'leaf-keywords)
 
 ;; An easy to use package to clean up mode lighters
 (straight-use-package
  '(blackout :host github :repo "raxod502/blackout"))
 
-;; Now that we have `use-package`, we can use the Garbage Collection Magic Trick
-(use-package gcmh
-  :demand t
+;; Initialize leaf-keywords.el
+(leaf-keywords-init)
+
+(leaf gcmh
+  :leaf-defer nil
+  :straight t
   :blackout
-  :init
+  :config
   (gcmh-mode 1))

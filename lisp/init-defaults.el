@@ -38,9 +38,9 @@
 
 ;; Enable line highlighting in text and programming mode
 ;; (This is to avoid its noisy presence in eg terminal modes, ivy, etc.)
-(use-package hl-line
-  :hook ((prog-mode . hl-line-mode)
-         (text-mode . hl-line-mode)))
+;;(use-package hl-line
+;;  :hook ((prog-mode . hl-line-mode)
+;;         (text-mode . hl-line-mode)))
 
 ;; Stop littering the file system with junk
 (setq make-backup-files nil
@@ -52,10 +52,10 @@
 (setq custom-safe-themes t)
 
 ;; Configure the recent files list
-(use-package recentf
-  :config
-  ;; Don't clutter the recent file list with downloaded packages
-  (add-to-list 'recentf-exclude "\\elpa"))
+;(use-package recentf
+;  :config
+;  ;; Don't clutter the recent file list with downloaded packages
+;  (add-to-list 'recentf-exclude "\\elpa"))
 
 ;; Remove some annoying/useless keybindings
 (unbind-key "C-x C-d")        ;; list-directory

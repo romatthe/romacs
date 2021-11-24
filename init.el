@@ -1,5 +1,4 @@
 ;;; -*- lexical-binding: t no-byte-compile: t; -*-
-
 ;; Copyright (C) 2018-2021 Robin Mattheussen
 
 ;; Author: Robin Mattheussen <me@romatthe.dev>
@@ -15,10 +14,10 @@
 
 ;; Core modules
 (require 'init-defaults)
-(require 'init-editing)
-(require 'init-tree-sitter)
-(require 'init-visual)
+;(require 'init-editing)
+;(require 'init-tree-sitter)
+;(require 'init-visual)
 
 ;; Languages
-(require 'init-lang-nix)
-(require 'init-lang-rust)
+;(require 'init-lang-nix)
+;(require 'init-lang-rust)
