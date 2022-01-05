@@ -58,11 +58,11 @@
 ;  (add-to-list 'recentf-exclude "\\elpa"))
 
 ;; Remove some annoying/useless keybindings
-(unbind-key "C-x C-d")        ;; list-directory
-(unbind-key "C-z")            ;; suspend-frame
-(unbind-key "C-x C-z")        ;; suspend-frame
-(unbind-key "<mouse-2>")      ;; pasting with mouse-wheel click
-(unbind-key "<C-wheel-down>") ;; text scale adjust
+(global-unset-key (kbd "C-x C-d"))        ;; list-directory
+(global-unset-key (kbd "C-z"))            ;; suspend-frame
+(global-unset-key (kbd "C-x C-z"))        ;; suspend-frame
+(global-unset-key (kbd "<mouse-2>"))      ;; pasting with mouse-wheel click
+(global-unset-key (kbd "<C-wheel-down>")) ;; text scale adjust
 
 ;; Better whitespace management
 (add-hook 'before-save-hook #'delete-trailing-whitespace)
