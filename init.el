@@ -1,5 +1,6 @@
 ;;; -*- lexical-binding: t no-byte-compile: t; -*-
-;; Copyright (C) 2018-2021 Robin Mattheussen
+
+;; Copyright (C) 2018-2022 Robin Mattheussen
 
 ;; Author: Robin Mattheussen <me@romatthe.dev>
 ;; URL: https://github.com/romatthe/romacs
@@ -9,15 +10,12 @@
 
 ;;; Code:
 
-;; Bootstrap the configuration
-(load-file (expand-file-name "init-bootstrap.el" user-emacs-directory))
+;; Reset GC threshold after init to something reasonable.
+(setq gc-cons-threshold most-positive-fixnum)
+(add-hook 'after-init-hook
+          (lambda ()
+            (setq gc-cons-threshold 16777216)))
 
-;; Core modules
-(require 'init-defaults)
-;(require 'init-editing)
-;(require 'init-tree-sitter)
-;(require 'init-visual)
-
-;; Languages
-;(require 'init-lang-nix)
-;(require 'init-lang-rust)
+;; Prepare paths.
+(add-to-list 'load-path (expand-file-name "core/" user-emacs-directory))
+(add-to-list 'load-path (expand-file-name "modules/" user-emacs-directory))
