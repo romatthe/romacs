@@ -9,6 +9,11 @@
 ;; Emacs HEAD (27+) introduces early-init.el, which is run before init.el,
 ;; before package and UI initialization happens.
 
+<<<<<<< HEAD
+=======
+;;; Code:
+
+>>>>>>> 012e832 (New configuration structure)
 ;; Defer garbage collection further back in the startup process
 (setq gc-cons-threshold most-positive-fixnum)
 
@@ -19,7 +24,11 @@
 ;; Using straight.el means we don't want to initialize package.el at all.
 (setq package-enable-at-startup nil)
 
+<<<<<<< HEAD
 ;; By disabling these UI elements in init-early.el we prevent the glimpse of un-styled Emacs.
+=======
+;; By disabling UI elements during early-init we prevent the glimpse of un-styled Emacs.
+>>>>>>> 012e832 (New configuration structure)
 (menu-bar-mode 0)
 (tool-bar-mode 0)
 (when (fboundp 'set-scroll-bar-mode)
