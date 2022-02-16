@@ -16,11 +16,6 @@
           (lambda ()
             (setq gc-cons-threshold 16777216)))
 
-<<<<<<< HEAD
-;; Prepare paths.
-=======
-
 ;; Prepare paths containing the configuration
->>>>>>> 012e832 (New configuration structure)
 (add-to-list 'load-path (expand-file-name "core/" user-emacs-directory))
 (add-to-list 'load-path (expand-file-name "modules/" user-emacs-directory))
