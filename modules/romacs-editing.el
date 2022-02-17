@@ -50,13 +50,14 @@
 	 ("C-S-w" . er/contract-region)))
 
 ;; smartparens
-(use-package smartparens
-  :blackout
-  :hook
-  ((after-init . (lambda ()
-                  (smartparens-global-mode t)
-                  (show-smartparens-global-mode t)))
-   (prog-mode . smartparens-strict-mode)))
+;; TODO: I've had issues with `smartparens-strict-mode` so I'm going to look for a simpler package to balance parenthesis
+;; (use-package smartparens
+;;   :blackout
+;;   :hook
+;;   ((after-init . (lambda ()
+;;                   (smartparens-global-mode t)
+;;                   (show-smartparens-global-mode t)))
+;;    (prog-mode . smartparens-strict-mode)))
 
 ;; browse-kill-ring
 (use-package browse-kill-ring
@@ -75,7 +76,7 @@
 
 ;; smart-comment
 ;; Better `comment-dwim' supporting uncommenting.
-;; TODO: Just look for a simple solution to comment multiple lines
+;; TODO: Just look for a simple solution to comment/uncomment multiple lines
 (use-package smart-comment
   :bind ("M-;" . smart-comment))
 
