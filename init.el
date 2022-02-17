@@ -32,3 +32,5 @@
 ;; Additional modules
 (require 'romacs-appearance)
 (require 'romacs-editing)
+(require 'romacs-company)
+(require 'romacs-dev)
