@@ -31,3 +31,4 @@
 
 ;; Additional modules
 (require 'romacs-appearance)
+(require 'romacs-editing)
